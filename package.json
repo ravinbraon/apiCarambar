@@ -1,0 +1,31 @@
+{
+  "name": "apicarambar",
+  "version": "1.0.0",
+  "description": "Api Carambar",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravinbraon/apiCarambar.git"
+  },
+  "author": "Braon Ravin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravinbraon/apiCarambar/issues"
+  },
+  "homepage": "https://github.com/ravinbraon/apiCarambar#readme",
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.43",
+    "@sequelize/sqlite3": "^7.0.0-alpha.43",
+    "express": "^4.21.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.25.9",
+    "@babel/plugin-proposal-decorators": "^7.25.9",
+    "@babel/preset-env": "^7.25.9"
+  }
+}
