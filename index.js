@@ -1,6 +1,5 @@
 const express = require("express");
 const { Sequelize, DataTypes, Model } = require('@sequelize/core');
-const { SqliteDialect } = require('@sequelize/sqlite3');
 
 const app = express();
 const port = 3000;
@@ -8,7 +7,7 @@ const port = 3000;
 class Jokes extends Model {}
 
 const sequelize = new Sequelize({
-  dialect: SqliteDialect,
+  dialect: 'sqlite',
   storage: 'sequelize.sqlite'
 });
 
@@ -23,6 +22,14 @@ Jokes.init({
     allowNull: false
   }
 }, { sequelize, modelName: 'Jokes' });
+
+
+sequelize.sync()
+  .then(() => {
+    console.log('Base de données et tables synchronisées !');
+  })
+  .catch(err => console.error('Erreur lors de la synchronisation de la base de données :', err));
+
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
