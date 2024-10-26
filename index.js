@@ -13,6 +13,6 @@ app.use(sqlite, joke);
 
 
 
-app.listen(port, () => {
+app.listen(3000, () => {
   console.log(`App listening on port ${port}!`);
 });
