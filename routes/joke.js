@@ -27,7 +27,10 @@ router.get("/blagues", (req, res) => {
   router.get("/blagues/random",(req,res) => {
 
     function getRandomJoke(numberJoke) {
-      const randomId = Math.floor(Math.random() * numberJoke);
+      let randomId = Math.floor(Math.random() * numberJoke);
+      if (randomId === 0) {
+        randomId ++
+      }
       let sql = 'SELECT Joke FROM Jokes WHERE id = ?';
       db.get(sql, [randomId], (error,row) => {
         if (error) {
