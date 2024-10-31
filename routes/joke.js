@@ -12,16 +12,16 @@ let db = new sqlite3.Database('./sequelize.sqlite', (error) => {
 });
 
 
-router.get("/blagues", (req, res) => {
-    let sql = 'SELECT joke FROM Jokes';
-    db.all(sql, (error,rows) => {
-      if (error) {
-        console.log(error);
-      } else {
-        res.send(rows)
-      }
+  router.get("/blagues", (req, res) => {
+      let sql = 'SELECT joke FROM Jokes';
+      db.all(sql, (error,rows) => {
+        if (error) {
+          console.log(error);
+        } else {
+          res.send(rows)
+        }
+      });
     });
-  });
 
 
   router.get("/blagues/random",(req,res) => {
